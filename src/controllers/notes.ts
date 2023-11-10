@@ -17,7 +17,7 @@ export const getnote:RequestHandler = async (req, res, next,) => {
     const noteId = req.params.noteId
     try {
         if (!mongoose.isValidObjectId(noteId) ) {
-            throw createHttpError(404, "invalid note id")
+            throw createHttpError(404, "invalid note id") 
         }
         const note = await Notemodel.findById(noteId).exec()
         if (!note) {
